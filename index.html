@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Munexa Labs — Next-Gen AI & Mobile Applications</title>
+  <meta name="description" content="Munexa Labs is a premier mobile technology studio crafting intelligent, AI-native applications for Android and Google Play.">
+  
+  <!-- Google Search Console Verification Meta Tag Placeholder -->
+  <!-- GOOGLE_VERIFICATION_TAG_PLACEHOLDER -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090b10;
+      --card-bg: rgba(18, 22, 33, 0.75);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(99, 102, 241, 0.4);
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.25);
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-title: 'Space Grotesk', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(9, 11, 16, 0.8);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #6366f1, #38bdf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff;
+      box-shadow: 0 0 20px var(--primary-glow);
+    }
+
+    .brand-name {
+      font-family: var(--font-title);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    .brand-name span {
+      background: linear-gradient(90deg, #6366f1, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px var(--primary-glow);
+    }
+
+    .hero {
+      padding: 100px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      color: #818cf8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 10px #34d399;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #a5b4fc, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+      box-shadow: 0 4px 20px var(--primary-glow);
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px var(--primary-glow);
+    }
+
+    .btn-secondary {
+      background: var(--card-bg);
+      color: var(--text);
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      transition: all 0.3s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-hover);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .app-title {
+      font-family: var(--font-title);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .app-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .app-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .app-tag {
+      font-size: 12px;
+      font-weight: 600;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .app-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: #a5b4fc;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+
+    .app-link:hover {
+      gap: 8px;
+      color: #fff;
+    }
+
+    .about-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-content h3 {
+      font-family: var(--font-title);
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .org-details-box {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 14px;
+    }
+
+    .detail-item:last-child {
+      border-bottom: none;
+    }
+
+    .detail-label {
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .detail-value {
+      color: var(--text);
+      font-weight: 600;
+      font-family: monospace;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .info-title {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .info-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .contact-form {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0 24px;
+      background: rgba(9, 11, 16, 0.95);
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 38px; }
+      .about-card { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .footer-content { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-bar">
+      <a href="#" class="brand">
+        <div class="brand-logo">M</div>
+        <div class="brand-name">MUNEXA <span>LABS</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#apps">Our Apps</a>
+        <a href="#about">About Organization</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="#contact" class="nav-btn">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Verified Google Play Developer Studio
+      </div>
+      <h1 class="hero-title">
+        Engineering Intelligent, <span>AI-Native</span> Mobile Experiences.
+      </h1>
+      <p class="hero-subtitle">
+        Munexa Labs develops modern, high-performance Android applications with intelligent algorithms, seamless user interfaces, and robust cloud architectures.
+      </p>
+      <div class="hero-actions">
+        <a href="#apps" class="btn-primary">Explore Applications</a>
+        <a href="#about" class="btn-secondary">About Munexa Labs</a>
+      </div>
+    </section>
+
+    <section id="apps">
+      <div class="section-header">
+        <div class="section-label">Portfolio & Products</div>
+        <h2 class="section-title">Applications Shipped by Munexa Labs</h2>
+      </div>
+
+      <div class="apps-grid">
+        <div class="app-card">
+          <div>
+            <div class="app-icon" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);">⚡</div>
+            <h3 class="app-title">Wait Zero</h3>
+            <p class="app-desc">
+              Real-time queuing and smart wait-time estimation engine that streamlines customer journeys and minimizes physical wait lines.
+            </p>
+          </div>
+          <div class="app-meta">
+            <span class="app-tag">Productivity & Utilities</span>
+            <span class="app-link">Google Play Live &rarr;</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div>
+            <div class="app-icon" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">🏠</div>
+            <h3 class="app-title">RoomPilot AI</h3>
+            <p class="app-desc">
+              AI-driven interior space transformation and visual redesign generator using advanced multimodal spatial models.
+            </p>
+          </div>
+          <div class="app-meta">
+            <span class="app-tag">AI & Design</span>
+            <span class="app-link">Google Play Live &rarr;</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div>
+            <div class="app-icon" style="background: linear-gradient(135deg, #10b981, #059669);">✨</div>
+            <h3 class="app-title">FaithGlow</h3>
+            <p class="app-desc">
+              Serene spiritual companion designed for daily reflection, mindfulness, and community-centered lifestyle routines.
+            </p>
+          </div>
+          <div class="app-meta">
+            <span class="app-tag">Lifestyle</span>
+            <span class="app-link">Google Play Live &rarr;</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div>
+            <div class="app-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">💪</div>
+            <h3 class="app-title">FitForge Ultimate</h3>
+            <p class="app-desc">
+              Precision health and progressive overload tracking platform with adaptive workout plans and biometric logging.
+            </p>
+          </div>
+          <div class="app-meta">
+            <span class="app-tag">Health & Fitness</span>
+            <span class="app-link">Google Play Live &rarr;</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div>
+            <div class="app-icon" style="background: linear-gradient(135deg, #6366f1, #4338ca);">🛡️</div>
+            <h3 class="app-title">Salah Shield</h3>
+            <p class="app-desc">
+              Smart distraction-blocking utility that automatically silences incoming interruptions during prayer and focused focus intervals.
+            </p>
+          </div>
+          <div class="app-meta">
+            <span class="app-tag">Utilities</span>
+            <span class="app-link">Google Play Live &rarr;</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div>
+            <div class="app-icon" style="background: linear-gradient(135deg, #8b5cf6, #d946ef);">🌟</div>
+            <h3 class="app-title">AI Glow Up</h3>
+            <p class="app-desc">
+              Interactive aesthetic analysis and personalized style grooming recommendations powered by computer vision.
+            </p>
+          </div>
+          <div class="app-meta">
+            <span class="app-tag">AI Lifestyle</span>
+            <span class="app-link">Google Play Live &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about-card">
+        <div class="about-content">
+          <div class="section-label">Official Corporate Profile</div>
+          <h3>About Munexa Labs</h3>
+          <p>
+            Munexa Labs is a registered technology and software organization dedicated to the development and publishing of premium mobile software.
+          </p>
+          <p>
+            Our applications serve thousands of active global users across multiple categories, upholding high standards of security, user privacy, and intuitive product design.
+          </p>
+        </div>
+
+        <div class="org-details-box">
+          <div class="detail-item">
+            <span class="detail-label">Legal Name:</span>
+            <span class="detail-value">MUNEXA LABS</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">D-U-N-S® Number:</span>
+            <span class="detail-value">77-534-2917</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">D&B Status:</span>
+            <span class="detail-value" style="color:#34d399;">Active Worldwide</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Developer ID:</span>
+            <span class="detail-value">8377526269300938318</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Domain:</span>
+            <span class="detail-value">genapps.online</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-label">Official Contact</div>
+        <h2 class="section-title">Get in Touch with Munexa Labs</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-title">🏢 Organization Headquarters</div>
+            <div class="info-desc">MUNEXA LABS<br>DHA Phase VIII, DHA Karachi, Pakistan</div>
+          </div>
+          <div class="info-card">
+            <div class="info-title">✉️ Developer & Support Inquiries</div>
+            <div class="info-desc">support@genapps.online<br>contact@munexalabs.com</div>
+          </div>
+          <div class="info-card">
+            <div class="info-title">🔒 Compliance & Privacy</div>
+            <div class="info-desc">privacy@genapps.online<br>Full GDPR & Google Play Policy Compliant</div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form onsubmit="event.preventDefault(); alert('Thank you for contacting Munexa Labs. Your message has been received.');">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="yourname@domain.com" required>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea rows="4" placeholder="How can we assist you with our apps?" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <strong>MUNEXA LABS</strong> — Official Developer Organization
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#apps">Apps</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div style="text-align: center; color: var(--text-dim); font-size: 12px; margin-top: 12px;">
+        &copy; 2026 MUNEXA LABS. All rights reserved. Registered with Dun & Bradstreet (DUNS: 77-534-2917).
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
